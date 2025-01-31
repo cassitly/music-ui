@@ -1,0 +1,22 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/devtools": "^2.0.0-beta.3",
+    "@nuxt/ui": "^2.21.0",
+    "express": "^4.21.2",
+    "express-basic-auth": "^1.2.1",
+    "nuxt": "^3.15.4",
+    "socket.io": "^4.8.1",
+    "vue": "latest",
+    "vue-router": "latest"
+  }
+}

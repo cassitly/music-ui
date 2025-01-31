@@ -1,0 +1,17 @@
+body {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+  }
+  
+  .taskbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px);
+  }
+  
