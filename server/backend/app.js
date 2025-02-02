@@ -5,7 +5,7 @@ const path = require('path');
 app.use(express.static('public')); // Serve static files (CSS, JS)
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, '../../public/pages/index.html'));
 });
 
 // Example route for processing commands from the UI
