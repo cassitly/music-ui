@@ -13,16 +13,16 @@ module.exports = function defineUIConfig() {
         settings: {
             dashboard: {
                 host: 'localhost',
-                port: 3000,
+                port: 3001,
             },
             server: {
                 renderer: {
                     host: 'localhost',
-                    port: 3001,
+                    port: 3002,
                 },
                 backend: {
                     host: 'localhost',
-                    port: 3002,
+                    port: 3003,
                 }
             },
         },
