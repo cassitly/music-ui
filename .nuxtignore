@@ -1,5 +1,0 @@
-# .nuxtignore
-src/*
-server/*
-packages/*
-config.yml.js

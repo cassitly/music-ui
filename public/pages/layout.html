@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Processing Dashboard</title>
+    <link rel="stylesheet" href="../../assets/css/main.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="container">
+        <!-- Top Section - System Status & Stats -->
+        <section id="system-status">
+            <h2>System Status & Stats</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <p><strong>SYSTEM STATUS:</strong> ONLINE</p>
+                </div>
+                <div class="stat-item">
+                    <p><strong>RECORDING & STREAMING INFO:</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Middle Section - Render & Music Processing -->
+        <section id="processing">            
+            <!-- Completed Renders -->
+            <div class="section">
+                <h3>COMPLETED RENDERS</h3>
+                <ul id="completed-renders">
+                    <li>Heroics 10:26 by Processor EST - 2:08</li>
+                    <li>...</li>
+                    <li>No thing here <i class="question-icon">?</i></li>
+                </ul>
+            </div>
+
+            <!-- Render View -->
+            <div class="section">
+                <h3>RENDER VIEW</h3>
+                <div class="render-view">
+                    <iframe src="http://localhost:3002/display" width="1280" height="720">
+                        <i class="question-icon">?</i>
+                        <p>ERROR: Unknown host</p>
+                        <p>ERROR 3496</p>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Music Instances -->
+            <div class="section">
+                <h3>MUSIC INSTANCES</h3>
+                <ul id="music-instances">
+                    <li>Elysium (23%) - Just now... waiting queue</li>
+                    <li>Lightsout (waiting) - Just now... waiting queue</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Bottom Section - User Actions & Approvals -->
+        <section id="user-actions">
+            <h2>User Actions & Approvals</h2>
+
+            <!-- Developer Panel -->
+            <div class="section">
+                <h3>DEV PANEL</h3>
+                <p>Run dev commands to manually create an instance!</p>
+                <p>Terminal v2.3.8</p>
+                <input type="text" id="dev-command" placeholder="Enter command...">
+                <button id="run-command">Run Command</button>
+            </div>
+
+            <!-- Awaiting Approval -->
+            <div class="section" id="awaiting-approval">
+                <h3>AWAITING APPROVAL</h3>
+                <ul>
+                    <li>
+                        Beneath the Neon Sky - Yesterday - 1:24:9 EST
+                        <button>VIEW</button>
+                        <button>DELETE</button>
+                    </li>
+                    <li>
+                        Echoes in the Light - Today - 3:20:22 EST
+                        <button>VIEW</button>
+                        <button>DELETE</button>
+                    </li>
+                </ul>
+                <p>No more generations awaiting your approval.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Node.js integration script -->
+    <script src="../../server/backend/app.js"></script> <!-- Link to external Node.js script -->
+</body>
+</html>

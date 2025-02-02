@@ -1,17 +1,117 @@
+/* Global Styles */
 body {
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    font-family: 'Segoe UI', sans-serif;
+    position: absolute;
+    scale: -100rem -90rem;
+    zoom: 73.5%;
+    align-content: center;
+    font-family: Arial, sans-serif;
+    background: #1e1e2e;
     color: white;
-  }
-  
-  .taskbar {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    display: flex;
+    height: 100vh;  /* Full height */
+}
+
+/* Main Container */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;  /* Left (1fr), Center (2fr), Right (1fr) */
+    grid-template-rows: auto auto; /* Top and Bottom sections */
+    gap: 20px;
+    width: 90%;
+    max-width: 1400px;  /* Ensuring it's not stretched */
+    margin: auto;  /* Center the entire UI */
+}
+
+/* System Status - Full Width on Top */
+#system-status {
+    grid-column: 1 / -1;
+    background: #282a36;
+    padding: 15px;
     border-radius: 10px;
-    padding: 10px 20px;
-    backdrop-filter: blur(10px);
-  }
-  
+}
+
+/* Processing Sections */
+#processing {
+    display: contents;
+}
+
+.section {
+    background: #313244;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Left Side - Completed Renders */
+#completed-renders {
+    list-style: none;
+    padding: 0;
+    width: 35rem;
+}
+
+/* Center - Render View */
+.render-view {
+    text-align: center;
+    background: black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Right Side - Music Instances */
+#music-instances {
+    list-style: none;
+    padding: 0;
+    width: 35rem;
+}
+
+/* Bottom Section - Dev Panel & Approvals */
+#user-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 20px;
+}
+
+#awaiting-approval {
+    flex: 1;
+}
+
+#dev-panel {
+    flex: 1;
+}
+
+/* Buttons */
+button {
+    background: #6272a4;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #50fa7b;
+}
+
+/* Fixing the Left Gap */
+@media (min-width: 1400px) {
+    .container {
+        width: 1200px;  /* Prevent unnecessary stretching */
+    }
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .render-view iframe {
+        width: 100%;
+    }
+
+    #user-actions {
+        flex-direction: column;
+    }
+}

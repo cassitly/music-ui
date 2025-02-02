@@ -2,7 +2,7 @@ const { generateItems } = require('../../packages/music-code/src/generator/bin.p
 const { writeConfig } = require('../../packages/music-code/src/settings');
 const { writeFileSync, readFileSync, readdirSync, existsSync } = require("fs");
 
-const getDirectoryContents = require('./getDirectoryContents');
+const getDirectoryContents = require('./getDirectoryContents.js');
 const appReady = require('../../packages/music-code/app');
 const path = require("path");
 const { rmSync } = require("fs");
