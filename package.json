@@ -13,7 +13,14 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "download-repositories": "cd packages && git clone https://github.com/cassitly/music-cover-renderer.git && git clone https://github.com/cassitly/music-code.git",
+    "install-repositories": "cd music-cover-renderer/server && git clone https://github.com/cassitly/music-server.git && git clone https://github.com/cassitly/api-plugin.git && cd ../../music-code/packages && git clone https://github.com/cassitly/api-plugin.git && cd ../../../",
+    "download-dependencies": "cd packages/music-cover-renderer/ && npm install && cd ../music-code/ && npm install",
+    "install-dependencies": "npm install && cd ../../music-cover-renderer/server/api-plugin/ && npm install && cd ../music-server/ && npm install",
+    "build": "npm run download-repositories && npm run install-repositories && npm run download-dependencies && npm run install-dependencies",
+
+    "electron": "electron packages/music-cover-renderer/render/main.js",
+    "start": "concurrently \"nodemon src/independenent.js\" \"npm run start-electron\""
   },
   "repository": {
     "type": "git",
