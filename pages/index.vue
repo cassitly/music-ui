@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-import Default from '../layout/default.vue'
+import Default from '../layout/Default.vue'
 </script>
