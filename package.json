@@ -15,10 +15,11 @@
   "scripts": {
     "create-repository": "mkdir packages",
     "download-repositories": "cd packages && git clone https://github.com/cassitly/music-cover-renderer.git && git clone https://github.com/cassitly/music-code.git",
-    "install-repositories": "cd packages/music-cover-renderer/server && git clone https://github.com/cassitly/music-server.git && git clone https://github.com/cassitly/api-plugin.git && cd ../../music-code/packages && git clone https://github.com/cassitly/api-plugin.git",
+    "install-repositories": "cd packages/music-cover-renderer/server && git clone https://github.com/cassitly/music-server.git && git clone https://github.com/cassitly/api-plugin.git",
+    "update-repositories": "cd packages/music-code/packages && git clone https://github.com/cassitly/api-plugin.git",
     "download-dependencies": "cd packages/music-cover-renderer/ && npm install && cd packages/music-code/ && npm install",
     "install-dependencies": "npm install && cd packages/music-cover-renderer/server/api-plugin/ && npm install && cd packages/music-server/ && npm install",
-    "build": "npm run create-repository && npm run download-repositories && npm run install-repositories && npm run download-dependencies && npm run install-dependencies",
+    "build": "npm run create-repository && npm run download-repositories && npm run install-repositories && npm run update-repositories && npm run download-dependencies && npm run install-dependencies",
 
     "electron": "electron packages/music-cover-renderer/render/main.js",
     "start": "concurrently \"nodemon src/independenent.js\" \"npm run start-electron\""
