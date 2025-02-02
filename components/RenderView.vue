@@ -1,26 +1,36 @@
 <template>
-    <div class="render-container">
-      <h3>Render View</h3>
-      <iframe :src="streamUrl" v-if="streamUrl"></iframe>
-      <p v-else>Error: Unable to load stream.</p>
-    </div>
-  </template>
-  
-  <script setup>
-  const streamUrl = ref('');
-  
-  const fetchOBSStream = async () => {
-    try {
-      const response = await fetch('/api/obs-render', {
-        headers: { 'Authorization': 'Basic ' + btoa('admin:securepassword123') }
-      });
-      const data = await response.json();
-      streamUrl.value = data.streamUrl;
-    } catch (error) {
-      console.error('OBS API Error:', error);
-    }
-  };
-  
-  onMounted(fetchOBSStream);
-  </script>
-  
+  <div class="render-box">
+    <h3>Render View</h3>
+    <!-- <video v-if="streamAvailable" :src="streamUrl" autoplay controls></video>
+    <p v-else>Unknown host - Error 3456</p> -->
+  </div>
+</template>
+
+<script setup>
+// import { ref } from 'vue';
+// import axios from 'axios';
+
+// const streamUrl = ref('');
+// const streamAvailable = ref(false);
+
+// const loadStream = async () => {
+//   try {
+//     const res = await axios.get('@/server/api/obs-render');
+//     streamUrl.value = res.data.url;
+//     streamAvailable.value = true;
+//   } catch {
+//     streamAvailable.value = false;
+//   }
+// };
+
+// loadStream();
+</script>
+
+<style scoped>
+.render-box {
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+}
+</style>
