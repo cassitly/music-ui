@@ -4,14 +4,14 @@
   "description": "Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.",
   "main": "config.yml.js",
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "path": "^0.12.7",
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
     "body-parser": "^1.20.1",
-    "nodemon": "^2.0.20"
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7"
   },
-  "devDependencies": {},
   "scripts": {
     "create-repository": "mkdir packages",
     "download-repositories": "cd packages && git clone https://github.com/cassitly/music-cover-renderer.git && git clone https://github.com/cassitly/music-code.git",
@@ -20,9 +20,8 @@
     "download-dependencies": "cd packages/music-cover-renderer/ && npm install && cd packages/music-code/ && npm install",
     "install-dependencies": "npm install && cd packages/music-cover-renderer/server/api-plugin/ && npm install && cd packages/music-server/ && npm install",
     "build": "npm run create-repository && npm run download-repositories && npm run install-repositories && npm run update-repositories && npm run download-dependencies && npm run install-dependencies",
-
     "electron": "electron packages/music-cover-renderer/render/main.js",
-    "start": "concurrently \"nodemon src/independenent.js\" \"npm run start-electron\""
+    "start": "concurrently \"nodemon src/independenent.js\" \"npm run electron\""
   },
   "repository": {
     "type": "git",

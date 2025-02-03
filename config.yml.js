@@ -25,6 +25,10 @@ module.exports = function defineUIConfig() {
                     port: 3003,
                 }
             },
+            controlpanel: {
+                host: 'localhost',
+                port: 3004,
+            },
         },
     }
     return config;
