@@ -11,14 +11,32 @@ This will download and install the full repository, and its dependencies (withou
 git clone https://github.com/cassitly/music-ui.git
 npm run build
 ```
-*If you're downloading the repository from a ZIP file, open the folder you've downloaded (extracted from the ZIP file) inside command prompt, and run these commands below.*
-```cmd
-npm run build
-```
+<br>
+If you're downloading the repository from a ZIP file, open the folder you've downloaded (extracted from the ZIP file) inside command prompt, and run ``npm run build`` to build it.
+<br>
 
 Now once you've downloaded and installed the repository. Run ``npm start`` to start the application, and a bunch of servers should be started.
 Your output should look something like this.
 ```cmd
+
+> music-ui@1.0.0 start
+> concurrently "nodemon src/independent.js" "npm run electron"
+
+[0] [nodemon] 2.0.22
+[0] [nodemon] to restart at any time, enter `rs`
+[0] [nodemon] watching path(s): *.*
+[0] [nodemon] watching extensions: js,mjs,json
+[0] [nodemon] starting `node src/independent.js`
+[0] App is starting...
+[1] 
+[1] > music-ui@1.0.0 electron
+[1] > electron packages/music-cover-renderer/render/main.js
+[1]
+[1] 
+[0] Server running at http://localhost:3003
+[0] Preview server running at http://localhost:3002
+[0] Display server running at http://localhost:3001
+[0] Server is running on http://localhost:3004
 
 ```
 
@@ -30,4 +48,16 @@ Which is ``http://localhost:3004``, copy and paste this into your browser.
 - ``nodejs@latest`` is used for running the application.
 
 **NPM Dependencies**
-- Add dependencies here
+- ``"body-parser": "^1.20.1"``, Used for parsing the html/json body
+- ``"concurrently": "^9.1.2"``, Used for running both the server and client at the same time
+- ``"cors": "^2.8.5"``, Used for enabled iframe rendering
+- ``"express": "^4.18.2"``, Used for html server creation
+- ``"fs": "^0.0.1-security"``, Used for file management
+- ``"nodemon": "^2.0.20"``, Used for running the files
+- ``"path": "^0.12.7"``, Used for resolving paths
+
+**Git Dependencies**
+- ``music-code@latest``, Used for music data generation
+- ``music-cover-renderer@latest``, Used for rendering the music cover
+- ``api-plugin@latest``, Used for API interactions with the NAI endpoint
+- ``music-server@latest``, Used for endpoint / Server Side interactons between clients
