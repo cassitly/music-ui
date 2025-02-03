@@ -9,6 +9,7 @@ To install and run this application, you can download the repository as a ZIP fi
 This will download and install the full repository, and its dependencies (without the private dependencies of course.)
 ```cmd
 git clone https://github.com/cassitly/music-ui.git
+cd music-ui
 npm run build
 ```
 <br>
